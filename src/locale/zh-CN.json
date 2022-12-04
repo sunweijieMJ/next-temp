@@ -1,0 +1,8 @@
+{
+  "api.fail": "请求失败",
+  "api.cancel": "请求取消",
+  "api.timeout": "请求超时",
+  "layout.header": "Header",
+  "layout.nav": "Nav",
+  "layout.footer": "Footer"
+}

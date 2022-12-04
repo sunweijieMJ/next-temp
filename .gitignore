@@ -14,12 +14,18 @@
 
 # production
 /build
+/dist
+/analyzer
 
 # misc
 .DS_Store
 *.pem
 
 # debug
+yarn.lock
+pnpm-lock.yaml
+package-lock.json
+
 npm-debug.log*
 yarn-debug.log*
 yarn-error.log*
@@ -34,3 +40,11 @@ yarn-error.log*
 # typescript
 *.tsbuildinfo
 next-env.d.ts
+
+# Editor directories and files
+.idea
+*.suo
+*.ntvs*
+*.njsproj
+*.sln
+*.sw?

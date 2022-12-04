@@ -1,0 +1,29 @@
+.layout {
+  display: grid;
+  grid-template:
+    'header header' 50px
+    'nav main'
+    'footer footer' 100px / 150px 1fr;
+  min-width: 1260px;
+  min-height: 100vh;
+
+  .layout-header {
+    grid-area: header;
+    background-color: rgb(155, 104, 212);
+  }
+
+  .layout-nav {
+    grid-area: nav;
+    background-color: rgb(216, 120, 120);
+  }
+
+  .layout-footer {
+    grid-area: footer;
+    background-color: rgb(133, 126, 136);
+  }
+
+  .layout-main {
+    grid-area: main;
+    background-color: #fff;
+  }
+}

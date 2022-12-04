@@ -1,0 +1,14 @@
+// antd
+@import '~antd/dist/reset.css';
+
+// 重置样式
+// @import '../assets/scss/reset';
+@import '../layout/LayoutMain/index';
+
+html,
+body,
+#main-react {
+  min-width: 1260px;
+  min-height: 100vh;
+  background-color: #fff;
+}

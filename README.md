@@ -1,34 +1,115 @@
-This is a [Next.js](https://nextjs.org/) project bootstrapped with [`create-next-app`](https://github.com/vercel/next.js/tree/canary/packages/create-next-app).
+# react temp
 
-## Getting Started
+> 使用`react`,`typescript`等主流技术搭建的模版工程。
 
-First, run the development server:
+## 功能清单
 
-```bash
-npm run dev
-# or
-yarn dev
+- [x] `api` 封装
+- [x] `assets` 静态资源
+- [x] `components` 组件
+- [x] `hooks` hooks
+- [x] `layout` 基座
+- [x] `locale` 国际化
+- [x] `modules` 业务模块
+- [x] `pages` 页面
+- [x] `plugins` 插件
+- [x] `router` 路由
+- [x] `saga` redux-saga
+- [x] `types` 类型声明
+- [x] `utils` 工具类
+
+## 目录结构
+
+```md
+├── .husky githooks 配置
+├── .vscode 工作区配置
+├── config 配置项
+├── public 静态资源
+| ├── config.js 配置文件
+| ├── favicon.ico favicon 图标
+| ├── index.html 入口文件
+|
+├── src # 源代码
+| ├── api
+| ├── assets
+| ├── components
+| ├── config
+| ├── hooks
+| ├── layout
+| ├── locale
+| ├── plugins
+| ├── reducers
+| ├── router
+| ├── saga
+| ├── types
+| ├── utils
+| |
+| ├── index.scss
+| ├── index.tsx
+| ├── react-app-env.d.ts
+| ├── reportWebVitals.ts
+| ├── setupTests.ts
+|
+├── .browserslistrc
+├── .cz-config.js
+├── .editorconfig
+├── .eslintignore
+├── .eslintrc.js
+├── .gitattributes
+├── .gitignore
+├── .markdownlint.json
+├── .prettierignore
+├── .prettier.js
+├── .stylelintignore
+├── .stylelintrc.js
+├── commitlint.config.js
+├── config.overrides.js
+├── cspell.config.js
+├── package.json
+├── README.md
+├── tsconfig.json
 ```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+## 常用脚本
 
-You can start editing the page by modifying `pages/index.tsx`. The page auto-updates as you edit the file.
+- 安装依赖
 
-[API routes](https://nextjs.org/docs/api-routes/introduction) can be accessed on [http://localhost:3000/api/hello](http://localhost:3000/api/hello). This endpoint can be edited in `pages/api/hello.ts`.
+  ```bash
+  pnpm i
+  ```
 
-The `pages/api` directory is mapped to `/api/*`. Files in this directory are treated as [API routes](https://nextjs.org/docs/api-routes/introduction) instead of React pages.
+- 开发编译
 
-## Learn More
+  ```bash
+  pnpm start
+  ```
 
-To learn more about Next.js, take a look at the following resources:
+- 生产打包
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+  ```bash
+  pnpm build
+  ```
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js/) - your feedback and contributions are welcome!
+- 格式化代码
 
-## Deploy on Vercel
+  ```bash
+  pnpm format
+  ```
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
+- `lint` 校验代码
 
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/deployment) for more details.
+  ```bash
+  pnpm lint
+  ```
+
+- 生成 `CHANGELOG.md`
+
+  ```bash
+  pnpm changelog
+  ```
+
+- `commit` 代码
+
+  ```bash
+  git cz
+  ```

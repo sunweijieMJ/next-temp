@@ -1,0 +1,8 @@
+{
+  "api.fail": "fail",
+  "api.cancel": "cancel",
+  "api.timeout": "timeout",
+  "layout.header": "header",
+  "layout.nav": "nav",
+  "layout.footer": "footer"
+}
