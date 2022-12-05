@@ -44,7 +44,8 @@ const rules = {
   ], // 要求或禁止类成员之间有空行
   'no-nested-ternary': 'off', // 不允许嵌套的三元表达式
   'no-continue': 'off', // 不允许continue
-  'no-control-regex': ['off'], // 禁止在正则表达式中使用控制字符
+  'no-control-regex': 'off', // 禁止在正则表达式中使用控制字符
+  'default-param-last': 'off', // 默认参数最后
 
   'sort-imports': [
     // import 排序

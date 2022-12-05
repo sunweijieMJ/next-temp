@@ -1,32 +1,25 @@
 import { ConfigProvider } from 'antd';
+import { createWrapper } from 'next-redux-wrapper';
 import type { AppProps } from 'next/app';
-import React, { useState } from 'react';
+import React from 'react';
 import { IntlProvider } from 'react-intl';
-import { Provider } from 'react-redux';
+import { Provider, useSelector } from 'react-redux';
 import Locale from '@/plugins/locale';
-import type { LocalKey } from '@/plugins/locale';
 import configureStore from '@/plugins/redux';
-import storage from '@/utils/storage';
+import type { RootState } from '@/redux/reducers';
 import './index.scss';
 
 const store = configureStore();
 
 function MyApp({ Component, pageProps }: AppProps) {
-  const [lang, setLang] = useState(Locale.locale);
-
-  const setLocale = (lang: LocalKey) => {
-    setLang(lang);
-    if (typeof window !== 'undefined') {
-      storage('localStorage').set('i18n', lang);
-    }
-  };
+  const lang = useSelector((state: RootState) => state.globalInfo.locale);
 
   return (
     <React.StrictMode>
       <Provider store={store}>
         <ConfigProvider locale={Locale.messages[lang].antd}>
           <IntlProvider locale={lang} messages={Locale.messages[lang]}>
-            <Component {...pageProps} setLocale={setLocale} />
+            <Component {...pageProps} />
           </IntlProvider>
         </ConfigProvider>
       </Provider>
@@ -34,4 +27,6 @@ function MyApp({ Component, pageProps }: AppProps) {
   );
 }
 
-export default MyApp;
+const makeStore = () => store;
+
+export default createWrapper(makeStore).withRedux(MyApp);

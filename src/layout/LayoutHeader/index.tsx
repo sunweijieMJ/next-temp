@@ -1,9 +1,11 @@
 import type { MenuProps } from 'antd';
 import { Button, Dropdown } from 'antd';
 import { useRouter } from 'next/router';
-import React, { useState } from 'react';
+import React from 'react';
 import { FormattedMessage } from 'react-intl';
-import storage from '@/utils/storage';
+import { useDispatch, useSelector } from 'react-redux';
+import { SET_LOCALE_ASYNC } from '@/redux/actions/globalInfo';
+import type { RootState } from '@/redux/reducers';
 
 const items: MenuProps['items'] = [
   {
@@ -17,13 +19,11 @@ const items: MenuProps['items'] = [
 ];
 
 const LayoutHeader: React.FC = () => {
-  const [lang, setLang] = useState('zh-CN');
+  const dispatch = useDispatch();
+  const locale = useSelector((state: RootState) => state.globalInfo.locale);
 
   const onChangeLang: MenuProps['onClick'] = ({ key }) => {
-    setLang(key);
-    if (typeof window !== 'undefined') {
-      storage('localStorage').set('i18n', key);
-    }
+    dispatch({ type: SET_LOCALE_ASYNC, payload: key });
   };
 
   const router = useRouter();
@@ -39,7 +39,7 @@ const LayoutHeader: React.FC = () => {
         Logout
       </Button>
       <Dropdown menu={{ items, onClick: onChangeLang }}>
-        <Button type="text">{lang}</Button>
+        <Button type="text">{locale}</Button>
       </Dropdown>
     </header>
   );
